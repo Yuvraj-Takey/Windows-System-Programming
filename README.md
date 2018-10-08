@@ -1,6 +1,4 @@
-
-
-## Windows application programming interface (WIN-API)
+# Windows application programming interface (WIN-API)
 
    The Windows API (Application Programming Interface) has come to be commonly known or refered to as Win32. If you want to create a program that would work in a Windows environment, you would need to have something that is compatible with Win32.
 
