@@ -1,5 +1,5 @@
 /*
- *	Demonstrate the working of Named Pipe (IPC Mechanism) in windows, Create separate thread for IPC operation
+ *	Demonstrate the working of Named Pipe (IPC Mechanism) in windows.
  *
  *
  *	@Author	- Yuvraj Takey
@@ -21,11 +21,11 @@ int main()
 		communications resource, mailslot, and pipe. Default Location : \\\\.\\pipe\Pipe1
 	*/
 	hPipe = CreateFile(L"\\\\.\\pipe\\MyPipe",				// The name of the file to be create or open
-			PIPE_ACCESS_DUPLEX,								// The requested access to the file 
-			FILE_SHARE_READ | FILE_SHARE_WRITE,				// The requested sharing mode of the file (READ|WRITE)
-			NULL,											// SECURITY INFO
-			OPEN_EXISTING,									// FILE MODE
-			FILE_ATTRIBUTE_NORMAL,							// attributes and flags
+			PIPE_ACCESS_DUPLEX,					// The requested access to the file 
+			FILE_SHARE_READ | FILE_SHARE_WRITE,			// The requested sharing mode of the file (READ|WRITE)
+			NULL,							// SECURITY INFO
+			OPEN_EXISTING,						// FILE MODE
+			FILE_ATTRIBUTE_NORMAL,					// attributes and flags
 			NULL);
 
 	if(hPipe == NULL)

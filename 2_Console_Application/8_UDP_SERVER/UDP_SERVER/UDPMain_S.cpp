@@ -1,5 +1,5 @@
 /*
- *	Demostrate the UDP socket appliction using winsock library on windows platform
+ *	Demonstrate the UDP socket client and server application using winsock library in windows platform.
  *
  *
  *	@Auther	- Yuvraj Takey

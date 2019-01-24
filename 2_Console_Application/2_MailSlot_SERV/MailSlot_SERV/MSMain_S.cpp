@@ -29,9 +29,9 @@ int main()
 
 	// get the mailSlot
 	if((hMail = CreateMailslot(L"\\\\.\\mailslot\\mSlot",	// The name of the mailslot.
-					0,							// The maximum size of a single message that can be written to the mailslot.
-					MAILSLOT_WAIT_FOREVER,		// wait for message to be written to the mailslot before time-out
-					NULL)) < 0)					// SECURITY level
+				0,				// The maximum size of a single message that can be written to the mailslot.
+				MAILSLOT_WAIT_FOREVER,		// wait for message to be written to the mailslot before time-out
+				NULL)) < 0)			// SECURITY level
 	{
 		printf("sorry : CreateMailSlot errorcode [%d]\n",GetLastError());
 		return -1;

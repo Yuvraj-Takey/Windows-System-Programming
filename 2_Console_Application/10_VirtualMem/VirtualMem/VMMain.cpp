@@ -1,5 +1,5 @@
 /*
- *	The windows API for vitual memory and system info
+ *	The windows API for using virtual memory access and get system's memory information
  *
  *	@Author	- Yuvraj Takey
  *		  yuvraj.takey@gmail.com
@@ -31,10 +31,10 @@ int main()
 	printf("Avail Virtual Mem : %d\n",mStat.dwAvailVirtual);
 
 	// Reserves, commits, or changes the state of a region of pages in the virtual address space of the calling process
-	vAlloc = VirtualAlloc(NULL,						// The starting address of the region to allocate
-				4096,								// The size of the region, in bytes.
-				MEM_COMMIT|MEM_RESERVE,				// The type of memory allocation
-				PAGE_READWRITE);					// The memory protection for the region of pages to be allocated.
+	vAlloc = VirtualAlloc(NULL,				// The starting address of the region to allocate
+				4096,				// The size of the region, in bytes.
+				MEM_COMMIT|MEM_RESERVE,		// The type of memory allocation
+				PAGE_READWRITE);		// The memory protection for the region of pages to be allocated.
 
 	if(vAlloc == NULL)
 	{
