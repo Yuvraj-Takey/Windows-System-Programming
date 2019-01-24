@@ -40,40 +40,40 @@ LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 // wntry point function for Windows program (HINSTANCE - Handle of current running process)
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
-	MSG msg;								// message Structure for getting the message from kernel
-	HWND hwnd;								// get the handle for holding Window of our process
-	WNDCLASSEX wndclassex;					// get the structure object for design the Window
+	MSG msg;					// message Structure for getting the message from kernel
+	HWND hwnd;					// get the handle for holding Window of our process
+	WNDCLASSEX wndclassex;				// get the structure object for design the Window
 	TCHAR AppName[] = L"MyWindow";			// Window Object Name
 
 	// fill the structure object (this data will deside the Window screen)
-	wndclassex.cbSize = sizeof(WNDCLASSEX);								// Structure Size
+	wndclassex.cbSize = sizeof(WNDCLASSEX);				// Structure Size
 	wndclassex.cbClsExtra = 0;
 	wndclassex.cbWndExtra = 0;
-	wndclassex.hbrBackground = (HBRUSH) GetStockObject(WHITE_BRUSH);	// Color for client area
-	wndclassex.hCursor = LoadCursor(hInstance,TEXT("IDI_ICON"));		// Cursor info
-	wndclassex.hIcon = LoadIcon(hInstance,TEXT("IDI_ICON"));			// Icon info
-	wndclassex.hIconSm = LoadIcon(hInstance,TEXT("IDI_ICON"));			// Taskbar icon
-	wndclassex.hInstance = hInstance;									// give the current process handle
-	wndclassex.lpfnWndProc = WndProc;									// give the name of CALLBACK func
-	wndclassex.lpszClassName = AppName;									// name for the window
-	wndclassex.lpszMenuName = NULL;										// Menu if required
-	wndclassex.style = CS_HREDRAW|CS_VREDRAW;							// Style for the Window
+	wndclassex.hbrBackground = (HBRUSH) GetStockObject(WHITE_BRUSH);// Color for client area
+	wndclassex.hCursor = LoadCursor(hInstance,TEXT("IDI_ICON"));	// Cursor info
+	wndclassex.hIcon = LoadIcon(hInstance,TEXT("IDI_ICON"));	// Icon info
+	wndclassex.hIconSm = LoadIcon(hInstance,TEXT("IDI_ICON"));	// Taskbar icon
+	wndclassex.hInstance = hInstance;				// give the current process handle
+	wndclassex.lpfnWndProc = WndProc;				// give the name of CALLBACK func
+	wndclassex.lpszClassName = AppName;				// name for the window
+	wndclassex.lpszMenuName = NULL;					// Menu if required
+	wndclassex.style = CS_HREDRAW|CS_VREDRAW;			// Style for the Window
 
 	// Register the Window's Data with Kernel
 	RegisterClassEx(&wndclassex);
 
 	// create the window on RAM (mean the window will not visible to user)
-	hwnd = CreateWindow(AppName,										// Object Name						
-						L"HelloWindow",									// Window Title name
-						WS_OVERLAPPEDWINDOW,							// Window Specification
-						100,											// X-axis on Shell screen
-						100,											// Y-axis on Shell screen
-						300,											// Window Height
-						300,											// Window Length
-						NULL,											// Parent of this Window
-						NULL,											// Menu for the Window
-						hInstance,										// Handle of the process
-						NULL);											// parameter that want to pass
+	hwnd = CreateWindow(AppName,					// Object Name						
+			L"HelloWindow",		// Window Title name
+			WS_OVERLAPPEDWINDOW,	// Window Specification
+			100,			// X-axis on Shell screen
+			100,			// Y-axis on Shell screen
+			300,			// Window Height
+			300,			// Window Length
+			NULL,			// Parent of this Window
+			NULL,			// Menu for the Window
+			hInstance,		// Handle of the process
+			NULL);			// parameter that want to pass
 
 	// check whether window is successfully created or not
 	if(NULL == hwnd)
@@ -84,7 +84,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// Show our Window on user screen/shell
 	ShowWindow(hwnd,nShowCmd);		// This will internally sends the message WM_SHOWWINDOW to WndProc
-	UpdateWindow(hwnd);				// THis will internally sends the message WM_REPAINTWINDOW to WndProc
+	UpdateWindow(hwnd);			// THis will internally sends the message WM_REPAINTWINDOW to WndProc
 	
 	// get the Message loop, so our process will continuously receives the messages from Kernel
 	while(GetMessage(&msg,hwnd,0,0))
