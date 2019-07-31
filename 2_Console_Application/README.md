@@ -14,3 +14,7 @@
 
 6)	Demonstrate virtual memory access and get system's memory information using windows API.
 
+
+#### Note:
+upon socket programming, please dont forget to include Ws2_32.lib into Project_property->Linker->Input->Additional Dependancies
+or just add one line before main -> #pragma comment(lib, "ws2_32.lib")
